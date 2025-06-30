@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iChat", "iChat.csproj", "{5B71999B-DBE4-4EF7-A7AE-00AF003B1124}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servidor", "..\Servidor\Servidor.csproj", "{93A549B1-D873-48BB-A28C-4A0ADAF15488}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5B71999B-DBE4-4EF7-A7AE-00AF003B1124}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B71999B-DBE4-4EF7-A7AE-00AF003B1124}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B71999B-DBE4-4EF7-A7AE-00AF003B1124}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93A549B1-D873-48BB-A28C-4A0ADAF15488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93A549B1-D873-48BB-A28C-4A0ADAF15488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93A549B1-D873-48BB-A28C-4A0ADAF15488}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93A549B1-D873-48BB-A28C-4A0ADAF15488}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,12 +1,51 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\tiago\\Documents\\Projetos\\TS - Projeto 2025\\v1\\TS---Projeto-2025\\iChat\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\tiagl\\OneDrive\\Ambiente de Trabalho\\Topicos Seguran\u00E7a\\TS---Projeto-2025\\iChat\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{93A549B1-D873-48BB-A28C-4A0ADAF15488}|..\\Servidor\\Servidor.csproj|c:\\users\\tiagl\\onedrive\\ambiente de trabalho\\topicos seguran\u00E7a\\ts---projeto-2025\\servidor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B71999B-DBE4-4EF7-A7AE-00AF003B1124}|iChat.csproj|C:\\Users\\tiagl\\OneDrive\\Ambiente de Trabalho\\Topicos Seguran\u00E7a\\TS---Projeto-2025\\iChat\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5B71999B-DBE4-4EF7-A7AE-00AF003B1124}|iChat.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\tiagl\\OneDrive\\Ambiente de Trabalho\\Topicos Seguran\u00E7a\\TS---Projeto-2025\\iChat\\LoginForm.cs",
+              "RelativeDocumentMoniker": "LoginForm.cs",
+              "ToolTip": "C:\\Users\\tiagl\\OneDrive\\Ambiente de Trabalho\\Topicos Seguran\u00E7a\\TS---Projeto-2025\\iChat\\LoginForm.cs [Design]",
+              "RelativeToolTip": "LoginForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T15:49:50.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\tiagl\\OneDrive\\Ambiente de Trabalho\\Topicos Seguran\u00E7a\\TS---Projeto-2025\\Servidor\\Program.cs",
+              "RelativeDocumentMoniker": "..\\Servidor\\Program.cs",
+              "ToolTip": "C:\\Users\\tiagl\\OneDrive\\Ambiente de Trabalho\\Topicos Seguran\u00E7a\\TS---Projeto-2025\\Servidor\\Program.cs",
+              "RelativeToolTip": "..\\Servidor\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T15:47:01.195Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

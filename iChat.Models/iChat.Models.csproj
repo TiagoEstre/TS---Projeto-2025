@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<!-- Retarget to .NET Framework 4.8 to match dependent projects -->
+		<TargetFramework>net48</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- Entity Framework 6 dependency -->
+		<PackageReference Include="EntityFramework" Version="6.4.4" />
+	</ItemGroup>
+</Project>

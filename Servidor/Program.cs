@@ -1,143 +1,101 @@
-﻿using ProtoIP;
-using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading;
+using ProtoIP;
+using iChat.Models; // Namespace com o teu DbContext e entidades
 
-namespace ServidorSeguro
+namespace Servidor
 {
-    class ClientSession
-    {
-        public TcpClient TcpClient;                  // Guarda o TcpClient para fechar depois
-        public ProtoStream Stream;                   // ProtoStream para comunicações
-        public AesCryptoServiceProvider Aes;         // Chave AES do cliente
-        public string Username;
-    }
-
     class Program
     {
-        const int PORT = 10000;
-        const string LOG_FILE = "chat.log";
-
-        static readonly List<ClientSession> sessions = new List<ClientSession>();
-        static readonly object sessionsLock = new object();
-
-        static void Main()
+        static void Main(string[] args)
         {
-            // Limpa log antigo
-            if (File.Exists(LOG_FILE)) File.Delete(LOG_FILE);
-
-            var listener = new TcpListener(IPAddress.Any, PORT);
+            // Ajustado para .NET Framework 4.8, sem using declarations
+            TcpListener listener = new TcpListener(IPAddress.Any, 10000);
             listener.Start();
-            Console.WriteLine($"Servidor à escuta na porta {PORT}...");
+            Console.WriteLine("Servidor à escuta na porta 10000...");
 
             while (true)
             {
-                var tcp = listener.AcceptTcpClient();
+                // Abrir cliente
+                TcpClient tcp = listener.AcceptTcpClient();
                 Console.WriteLine("Novo cliente conectado.");
-                var ps = new ProtoStream(tcp.GetStream());
 
-                var session = new ClientSession { TcpClient = tcp, Stream = ps };
-                lock (sessionsLock) sessions.Add(session);
+                // Stream de rede e wrapper ProtoStream
+                NetworkStream netStream = tcp.GetStream();
+                ProtoStream stream = new ProtoStream(netStream);
 
-                new Thread(() => HandleClient(session)) { IsBackground = true }.Start();
-            }
-        }
-
-        static void HandleClient(ClientSession sess)
-        {
-            try
-            {
-                var stream = sess.Stream;
-
-                // 1) Handshake RSA → AES
+                // 1) RSA handshake: receber XML público, gerar AES e enviar chave cifrada
                 stream.Receive();
                 string clientPubXml = stream.GetDataAs<string>();
-                var rsaClient = new RSACryptoServiceProvider();
-                rsaClient.FromXmlString(clientPubXml);
+                RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+                rsa.FromXmlString(clientPubXml);
 
-                var aes = new AesCryptoServiceProvider();
+                AesCryptoServiceProvider aes = new AesCryptoServiceProvider();
                 aes.GenerateKey();
-                sess.Aes = aes;
+                byte[] encKey = rsa.Encrypt(aes.Key, false);
+                stream.Transmit(Convert.ToBase64String(encKey));
 
-                byte[] encAesKey = rsaClient.Encrypt(aes.Key, false);
-                string encAesKeyB64 = Convert.ToBase64String(encAesKey);
-                stream.Transmit(encAesKeyB64);
-
-                // 2) Autenticação
+                // 2) Receber credenciais cifradas e descifrar
                 stream.Receive();
-                string username = DecryptString(stream.GetDataAs<string>(), aes);
+                string encUser = stream.GetDataAs<string>();
                 stream.Receive();
-                string password = DecryptString(stream.GetDataAs<string>(), aes);
-                sess.Username = username;
-                Console.WriteLine($"[{username}] login: {password}");
+                string encPass = stream.GetDataAs<string>();
 
-                stream.Transmit(EncryptString("LOGIN_OK", aes));
-                Broadcast($"{username} entrou no chat.", sess);
+                string username = DecryptString(encUser, aes);
+                string password = DecryptString(encPass, aes);
 
-                // 3) Loop de mensagens
-                while (true)
+                // 3) Autenticação com Entity Framework      
+                string pwdHash = HashSHA256(password);
+                bool ok;
+                using (var db = new iChatContext())
                 {
-                    stream.Receive();
-                    string data = stream.GetDataAs<string>();
-                    string msg = DecryptString(data, aes);
-
-                    string line = $"[{username}] {msg}";
-                    Console.WriteLine(line);
-                    File.AppendAllText(LOG_FILE, line + Environment.NewLine);
-
-                    Broadcast(line, sess);
+                    ok = db.Users.Any(u => u.Name == username && u.Password == pwdHash);
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Sessão {sess.Username ?? "(desconhecido)"} terminou: {ex.Message}");
-            }
-            finally
-            {
-                lock (sessionsLock) sessions.Remove(sess);
-                Broadcast($"{sess.Username ?? "Um cliente"} saiu.", null);
-                try { sess.TcpClient.Close(); } catch { }
+
+                // 4) Responder ao cliente
+                string reply = ok ? "LOGIN_OK" : "LOGIN_FAIL";
+                stream.Transmit(EncryptString(reply, aes));
+
+                // Fechar sessão cliente
+                tcp.Close();
+                Console.WriteLine($"Sessão ({username}) terminada: {(ok ? "sucesso" : "falha")}.");
             }
         }
 
-        static void Broadcast(string message, ClientSession except)
+        // — Helpers criptográficos —
+        private static string EncryptString(string plain, SymmetricAlgorithm aes)
         {
-            lock (sessionsLock)
-            {
-                foreach (var s in sessions)
-                {
-                    if (s == except) continue;
-                    try
-                    {
-                        s.Stream.Transmit(EncryptString(message, s.Aes));
-                    }
-                    catch { }
-                }
-            }
-        }
-
-        // Helpers AES
-        static string EncryptString(string plain, AesCryptoServiceProvider aes)
-        {
+            aes.GenerateIV();
             byte[] iv = aes.IV;
-            var encryptor = aes.CreateEncryptor(aes.Key, iv);
-            byte[] cipher = encryptor.TransformFinalBlock(Encoding.UTF8.GetBytes(plain), 0, plain.Length);
+            byte[] cipher = aes.CreateEncryptor(aes.Key, iv)
+                               .TransformFinalBlock(Encoding.UTF8.GetBytes(plain), 0, plain.Length);
             return Convert.ToBase64String(iv) + "|" + Convert.ToBase64String(cipher);
         }
 
-        static string DecryptString(string data, AesCryptoServiceProvider aes)
+        private static string DecryptString(string data, SymmetricAlgorithm aes)
         {
-            var parts = data.Split('|');
+            string[] parts = data.Split('|');
             byte[] iv = Convert.FromBase64String(parts[0]);
             byte[] cipher = Convert.FromBase64String(parts[1]);
-            var decryptor = aes.CreateDecryptor(aes.Key, iv);
-            byte[] plain = decryptor.TransformFinalBlock(cipher, 0, cipher.Length);
+            byte[] plain = aes.CreateDecryptor(aes.Key, iv)
+                                .TransformFinalBlock(cipher, 0, cipher.Length);
             return Encoding.UTF8.GetString(plain);
+        }
+
+        private static string HashSHA256(string input)
+        {
+            using (var sha = SHA256.Create())
+            {
+                byte[] h = sha.ComputeHash(Encoding.UTF8.GetBytes(input));
+                StringBuilder sb = new StringBuilder();
+                foreach (byte b in h)
+                    sb.Append(b.ToString("x2"));
+                return sb.ToString();
+            }
         }
     }
 }

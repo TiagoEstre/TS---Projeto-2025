@@ -44,9 +44,16 @@ namespace iChat.views
             }
         }
 
-        private void lb_Users_SelectedIndexChanged(object sender, EventArgs e)
+        private void lb_Users_DoubleClick(object sender, EventArgs e)
         {
+            if (lb_Users.SelectedItem is User user)
+            {
+                selectUser = user;
 
+                tb_Id.Text = selectUser.Id.ToString();
+                tb_Name.Text = selectUser.Name;
+                tb_Email.Text = selectUser.Email;
+            }
         }
     }
 }

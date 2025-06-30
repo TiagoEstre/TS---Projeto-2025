@@ -77,8 +77,7 @@
             this.tb_Username.Size = new System.Drawing.Size(235, 40);
             this.tb_Username.TabIndex = 2;
             this.tb_Username.TextOffset = new System.Drawing.Point(10, 0);
-            this.tb_Username.Enter += new System.EventHandler(this.tb_Username_Enter);
-            this.tb_Username.Leave += new System.EventHandler(this.tb_Username_Leave);
+            
             // 
             // ElipseLogin
             // 
@@ -99,7 +98,6 @@
             this.p_Login.Name = "p_Login";
             this.p_Login.Size = new System.Drawing.Size(322, 450);
             this.p_Login.TabIndex = 0;
-            this.p_Login.MouseDown += new System.Windows.Forms.MouseEventHandler(this.p_Login_MouseDown);
             // 
             // label2
             // 
@@ -135,7 +133,6 @@
             this.l_Register.Size = new System.Drawing.Size(57, 14);
             this.l_Register.TabIndex = 8;
             this.l_Register.Text = "Register";
-            this.l_Register.Click += new System.EventHandler(this.l_Register_Click);
             // 
             // label3
             // 
@@ -202,8 +199,7 @@
             this.tb_Password.Size = new System.Drawing.Size(235, 40);
             this.tb_Password.TabIndex = 3;
             this.tb_Password.TextOffset = new System.Drawing.Point(10, 0);
-            this.tb_Password.Enter += new System.EventHandler(this.tb_Password_Enter);
-            this.tb_Password.Leave += new System.EventHandler(this.tb_Password_Leave);
+           
             // 
             // p_Register
             // 
@@ -219,7 +215,6 @@
             this.p_Register.Name = "p_Register";
             this.p_Register.Size = new System.Drawing.Size(324, 450);
             this.p_Register.TabIndex = 11;
-            this.p_Register.MouseDown += new System.Windows.Forms.MouseEventHandler(this.p_Register_MouseDown);
             // 
             // l_Login
             // 
@@ -231,7 +226,7 @@
             this.l_Login.Size = new System.Drawing.Size(39, 14);
             this.l_Login.TabIndex = 8;
             this.l_Login.Text = "Login";
-            this.l_Login.Click += new System.EventHandler(this.l_Login_Click);
+            
             // 
             // label7
             // 
@@ -298,8 +293,7 @@
             this.tb_RegisterConfirmPassword.Size = new System.Drawing.Size(235, 40);
             this.tb_RegisterConfirmPassword.TabIndex = 3;
             this.tb_RegisterConfirmPassword.TextOffset = new System.Drawing.Point(10, 0);
-            this.tb_RegisterConfirmPassword.Enter += new System.EventHandler(this.RegisterConfirmPassword_Enter);
-            this.tb_RegisterConfirmPassword.Leave += new System.EventHandler(this.RegisterConfirmPassword_Leave);
+            
             // 
             // tb_RegisterEmail
             // 
@@ -324,8 +318,7 @@
             this.tb_RegisterEmail.Size = new System.Drawing.Size(235, 40);
             this.tb_RegisterEmail.TabIndex = 3;
             this.tb_RegisterEmail.TextOffset = new System.Drawing.Point(10, 0);
-            this.tb_RegisterEmail.Enter += new System.EventHandler(this.RegisterEmail_Enter);
-            this.tb_RegisterEmail.Leave += new System.EventHandler(this.RegisterEmail_Leave);
+            
             // 
             // tb_RegisterPassword
             // 
@@ -350,8 +343,7 @@
             this.tb_RegisterPassword.Size = new System.Drawing.Size(235, 40);
             this.tb_RegisterPassword.TabIndex = 3;
             this.tb_RegisterPassword.TextOffset = new System.Drawing.Point(10, 0);
-            this.tb_RegisterPassword.Enter += new System.EventHandler(this.RegisterPassword_Enter);
-            this.tb_RegisterPassword.Leave += new System.EventHandler(this.RegisterPassword_Leave);
+            
             // 
             // tb_RegisterUsername
             // 
@@ -376,8 +368,7 @@
             this.tb_RegisterUsername.Size = new System.Drawing.Size(235, 40);
             this.tb_RegisterUsername.TabIndex = 2;
             this.tb_RegisterUsername.TextOffset = new System.Drawing.Point(10, 0);
-            this.tb_RegisterUsername.Enter += new System.EventHandler(this.RegisterUsername_Enter);
-            this.tb_RegisterUsername.Leave += new System.EventHandler(this.RegisterUsername_Leave);
+           
             // 
             // ShadowFormLogin
             // 

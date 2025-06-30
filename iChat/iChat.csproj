@@ -71,11 +71,13 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202506282001358_iChatContext.cs" />
-    <Compile Include="Migrations\202506282001358_iChatContext.Designer.cs">
-      <DependentUpon>202506282001358_iChatContext.cs</DependentUpon>
+    <Compile Include="Migrations\202506301514184_iChatContext.cs" />
+    <Compile Include="Migrations\202506301514184_iChatContext.Designer.cs">
+      <DependentUpon>202506301514184_iChatContext.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="models\Messager.cs" />
+    <Compile Include="models\Status.cs" />
     <Compile Include="models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,8 +90,8 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202506282001358_iChatContext.resx">
-      <DependentUpon>202506282001358_iChatContext.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202506301514184_iChatContext.resx">
+      <DependentUpon>202506301514184_iChatContext.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

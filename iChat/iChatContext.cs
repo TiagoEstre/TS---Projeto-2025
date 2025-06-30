@@ -11,5 +11,6 @@ namespace iChat
     public class iChatContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Messager> Messagers { get; set; }
     }
 }

@@ -7,17 +7,14 @@ using System.Threading.Tasks;
 
 namespace iChat.models
 {
-    public class User
+    public class Messager
     {
         [Key]
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
+        public User IdUser { get; set; }
+        public string Message { get; set; }
 
-        public Status Status { get; set; }
-
-        public User()
+        public Messager()
         {
         }
     }

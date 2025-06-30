@@ -13,7 +13,7 @@ namespace iChat.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202506282001358_iChatContext"; }
+            get { return "202506301514184_iChatContext"; }
         }
         
         string IMigrationMetadata.Source

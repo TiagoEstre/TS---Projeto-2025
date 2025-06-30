@@ -14,5 +14,5 @@ C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v1\TS---Projeto-2025\iChat\b
 C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v1\TS---Projeto-2025\iChat\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v1\TS---Projeto-2025\iChat\bin\Debug\EntityFramework.xml
 C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v1\TS---Projeto-2025\iChat\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v1\TS---Projeto-2025\iChat\obj\Debug\iChat.Migrations.iChatContext.resources
 C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v1\TS---Projeto-2025\iChat\obj\Debug\iChat.views.ChatForm.resources
+C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v1\TS---Projeto-2025\iChat\obj\Debug\iChat.Migrations.iChatContext.resources

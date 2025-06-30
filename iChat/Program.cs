@@ -16,7 +16,15 @@ namespace iChat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+
+            LoginForm loginForm1 = new LoginForm();
+            LoginForm loginForm2 = new LoginForm();
+
+            loginForm1.Show();
+
+            loginForm2.Show();
+
+            Application.Run(loginForm1);
         }
     }
 }

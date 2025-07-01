@@ -72,15 +72,14 @@ namespace iChat
                 aes = new AesCryptoServiceProvider();
                 aes.Key = keyBytes;
 
-                // 3. Envia credenciais cifradas
+                // 3. Envia credenciais cifradas num só pacote!
                 string userEncrypted = EncryptString(user, aes);
                 string passEncrypted = EncryptString(pass, aes);
-                clientStream.Transmit(userEncrypted);
-                clientStream.Transmit(passEncrypted);
+                string pacote = userEncrypted + "||" + passEncrypted;
+                clientStream.Transmit(pacote);
 
                 // Debug (podes remover)
-                Console.WriteLine("Enviado encUser: " + userEncrypted);
-                Console.WriteLine("Enviado encPass: " + passEncrypted);
+                Console.WriteLine("Enviado pacote credenciais: " + pacote);
 
                 // 4. Resposta do servidor
                 clientStream.Receive();

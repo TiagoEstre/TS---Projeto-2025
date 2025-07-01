@@ -38,11 +38,14 @@ namespace Servidor
                     byte[] encKey = rsa.Encrypt(aes.Key, false);
                     stream.Transmit(Convert.ToBase64String(encKey));
 
-                    // 2) Credenciais cifradas
+                    // 2) Recebe credenciais cifradas num só pacote
                     stream.Receive();
-                    string encUser = stream.GetDataAs<string>();
-                    stream.Receive();
-                    string encPass = stream.GetDataAs<string>();
+                    string encCreds = stream.GetDataAs<string>();
+                    string[] creds = encCreds.Split(new[] { "||" }, StringSplitOptions.None);
+                    if (creds.Length != 2) throw new Exception("Erro ao separar credenciais!");
+
+                    string encUser = creds[0];
+                    string encPass = creds[1];
 
                     Console.WriteLine($"Recebido encUser: {encUser}");
                     Console.WriteLine($"Recebido encPass: {encPass}");

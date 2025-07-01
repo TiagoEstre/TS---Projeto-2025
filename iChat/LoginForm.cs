@@ -46,8 +46,8 @@ namespace iChat
         {
             string user = tb_Username.Text;
             string pass = tb_Password.Text;
-            if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass) ||
-                user == "Username" || pass == "Password")
+
+            if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass))
             {
                 MessageBox.Show("Todos os campos são obrigatórios.");
                 return;
@@ -58,7 +58,7 @@ namespace iChat
                 TcpClient tcp = new TcpClient("127.0.0.1", 10000);
                 clientStream = new ProtoStream(tcp.GetStream());
 
-                // RSA handshake
+                // 1. RSA Handshake
                 rsa = new RSACryptoServiceProvider(2048);
                 string pubXml = rsa.ToXmlString(false);
                 clientStream.Transmit(pubXml);
@@ -67,16 +67,25 @@ namespace iChat
                 string encKeyB64 = clientStream.GetDataAs<string>();
                 byte[] encKey = Convert.FromBase64String(encKeyB64);
                 byte[] keyBytes = rsa.Decrypt(encKey, false);
+
+                // 2. AES com chave recebida
                 aes = new AesCryptoServiceProvider();
                 aes.Key = keyBytes;
 
-                // Envia credenciais cifradas
-                clientStream.Transmit(EncryptString(user, aes));
-                clientStream.Transmit(EncryptString(pass, aes));
+                // 3. Envia credenciais cifradas
+                string userEncrypted = EncryptString(user, aes);
+                string passEncrypted = EncryptString(pass, aes);
+                clientStream.Transmit(userEncrypted);
+                clientStream.Transmit(passEncrypted);
 
-                // Lê resposta
+                // Debug (podes remover)
+                Console.WriteLine("Enviado encUser: " + userEncrypted);
+                Console.WriteLine("Enviado encPass: " + passEncrypted);
+
+                // 4. Resposta do servidor
                 clientStream.Receive();
                 string resp = DecryptString(clientStream.GetDataAs<string>(), aes);
+
                 if (resp != "LOGIN_OK")
                 {
                     MessageBox.Show("Utilizador ou senha inválidos.");
@@ -84,7 +93,7 @@ namespace iChat
                     return;
                 }
 
-                // Guarda sessão e abre chat
+                // 5. Guarda sessão
                 if (ts_Remember.Checked) SaveCredentials(user, pass);
                 else ClearSavedCredentials();
 
@@ -99,6 +108,8 @@ namespace iChat
                 MessageBox.Show("Erro no servidor: " + ex.Message);
             }
         }
+
+
 
         private void b_Register_Click(object sender, EventArgs e)
         {
@@ -128,6 +139,9 @@ namespace iChat
 
         private static string EncryptString(string plain, AesCryptoServiceProvider aes)
         {
+            if (aes == null || aes.Key == null)
+                throw new ArgumentNullException("AES está nulo ou não tem chave definida.");
+
             aes.GenerateIV();
             byte[] iv = aes.IV;
             byte[] ct = aes.CreateEncryptor(aes.Key, iv)
@@ -135,15 +149,22 @@ namespace iChat
             return Convert.ToBase64String(iv) + "|" + Convert.ToBase64String(ct);
         }
 
-        private static string DecryptString(string data, AesCryptoServiceProvider aes)
+        private static string DecryptString(string data, SymmetricAlgorithm aes)
         {
-            var parts = data.Split('|');
+            if (string.IsNullOrWhiteSpace(data) || !data.Contains("|"))
+                throw new FormatException("Dados recebidos não contêm o separador '|'");
+
+            string[] parts = data.Split('|');
+            if (parts.Length != 2)
+                throw new FormatException("Formato inválido: deve conter IV|Cipher");
+
             byte[] iv = Convert.FromBase64String(parts[0]);
-            byte[] ct = Convert.FromBase64String(parts[1]);
-            byte[] pt = aes.CreateDecryptor(aes.Key, iv)
-                           .TransformFinalBlock(ct, 0, ct.Length);
-            return Encoding.UTF8.GetString(pt);
+            byte[] cipher = Convert.FromBase64String(parts[1]);
+            byte[] plain = aes.CreateDecryptor(aes.Key, iv)
+                                .TransformFinalBlock(cipher, 0, cipher.Length);
+            return Encoding.UTF8.GetString(plain);
         }
+
 
         private (string username, string password)? LoadCredentials()
         {

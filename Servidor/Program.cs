@@ -5,7 +5,7 @@ using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
 using ProtoIP;
-using iChat.Models; // Namespace com o teu DbContext e entidades
+using iChat.Models;
 
 namespace Servidor
 {
@@ -13,60 +13,68 @@ namespace Servidor
     {
         static void Main(string[] args)
         {
-            // Ajustado para .NET Framework 4.8, sem using declarations
             TcpListener listener = new TcpListener(IPAddress.Any, 10000);
             listener.Start();
             Console.WriteLine("Servidor à escuta na porta 10000...");
 
             while (true)
             {
-                // Abrir cliente
                 TcpClient tcp = listener.AcceptTcpClient();
                 Console.WriteLine("Novo cliente conectado.");
 
-                // Stream de rede e wrapper ProtoStream
                 NetworkStream netStream = tcp.GetStream();
                 ProtoStream stream = new ProtoStream(netStream);
 
-                // 1) RSA handshake: receber XML público, gerar AES e enviar chave cifrada
-                stream.Receive();
-                string clientPubXml = stream.GetDataAs<string>();
-                RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
-                rsa.FromXmlString(clientPubXml);
-
-                AesCryptoServiceProvider aes = new AesCryptoServiceProvider();
-                aes.GenerateKey();
-                byte[] encKey = rsa.Encrypt(aes.Key, false);
-                stream.Transmit(Convert.ToBase64String(encKey));
-
-                // 2) Receber credenciais cifradas e descifrar
-                stream.Receive();
-                string encUser = stream.GetDataAs<string>();
-                stream.Receive();
-                string encPass = stream.GetDataAs<string>();
-
-                string username = DecryptString(encUser, aes);
-                string password = DecryptString(encPass, aes);
-
-                // 3) Autenticação com Entity Framework      
-                string pwdHash = HashSHA256(password);
-                bool ok;
-                using (var db = new iChatContext())
+                try
                 {
-                    ok = db.Users.Any(u => u.Name == username && u.Password == pwdHash);
+                    // 1) Handshake
+                    stream.Receive();
+                    string clientPubXml = stream.GetDataAs<string>();
+                    RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+                    rsa.FromXmlString(clientPubXml);
+
+                    AesCryptoServiceProvider aes = new AesCryptoServiceProvider();
+                    aes.GenerateKey();
+                    byte[] encKey = rsa.Encrypt(aes.Key, false);
+                    stream.Transmit(Convert.ToBase64String(encKey));
+
+                    // 2) Credenciais cifradas
+                    stream.Receive();
+                    string encUser = stream.GetDataAs<string>();
+                    stream.Receive();
+                    string encPass = stream.GetDataAs<string>();
+
+                    Console.WriteLine($"Recebido encUser: {encUser}");
+                    Console.WriteLine($"Recebido encPass: {encPass}");
+
+                    string username = DecryptString(encUser, aes);
+                    string password = DecryptString(encPass, aes);
+
+                    // 3) Autenticação EF
+                    string pwdHash = HashSHA256(password);
+                    bool ok;
+                    using (var db = new iChatContext())
+                    {
+                        ok = db.Users.Any(u => u.Name == username && u.Password == pwdHash);
+                    }
+
+                    // 4) Resposta
+                    string reply = ok ? "LOGIN_OK" : "LOGIN_FAIL";
+                    stream.Transmit(EncryptString(reply, aes));
+                    Console.WriteLine($"Sessão ({username}) terminada: {(ok ? "sucesso" : "falha")}.");
                 }
-
-                // 4) Responder ao cliente
-                string reply = ok ? "LOGIN_OK" : "LOGIN_FAIL";
-                stream.Transmit(EncryptString(reply, aes));
-
-                // Fechar sessão cliente
-                tcp.Close();
-                Console.WriteLine($"Sessão ({username}) terminada: {(ok ? "sucesso" : "falha")}.");
+                catch (Exception ex)
+                {
+                    Console.WriteLine("ERRO: " + ex.Message);
+                }
+                finally
+                {
+                    tcp.Close();
+                }
             }
         }
 
-        // — Helpers criptográficos —
+        // Encriptação AES com IV incluído
         private static string EncryptString(string plain, SymmetricAlgorithm aes)
         {
             aes.GenerateIV();
@@ -76,14 +84,31 @@ namespace Servidor
             return Convert.ToBase64String(iv) + "|" + Convert.ToBase64String(cipher);
         }
 
+        // Desencriptação com proteção contra erro de Base64
         private static string DecryptString(string data, SymmetricAlgorithm aes)
         {
+            if (!data.Contains("|"))
+                throw new FormatException("Dados recebidos não contêm o separador '|'");
+
             string[] parts = data.Split('|');
-            byte[] iv = Convert.FromBase64String(parts[0]);
-            byte[] cipher = Convert.FromBase64String(parts[1]);
-            byte[] plain = aes.CreateDecryptor(aes.Key, iv)
-                                .TransformFinalBlock(cipher, 0, cipher.Length);
-            return Encoding.UTF8.GetString(plain);
+            if (parts.Length != 2)
+                throw new FormatException("Formato inválido: não há duas partes após split");
+
+            try
+            {
+                byte[] iv = Convert.FromBase64String(parts[0]);
+                byte[] cipher = Convert.FromBase64String(parts[1]);
+                byte[] plain = aes.CreateDecryptor(aes.Key, iv)
+                                  .TransformFinalBlock(cipher, 0, cipher.Length);
+                return Encoding.UTF8.GetString(plain);
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine("Erro ao converter Base64:");
+                Console.WriteLine("Parte IV: " + parts[0]);
+                Console.WriteLine("Parte Cifra: " + parts[1]);
+                throw new FormatException("Base64 inválido: " + ex.Message);
+            }
         }
 
         private static string HashSHA256(string input)

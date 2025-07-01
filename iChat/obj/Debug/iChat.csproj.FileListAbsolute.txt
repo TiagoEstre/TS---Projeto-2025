@@ -1,19 +1,18 @@
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\bin\Debug\iChat.exe.config
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\bin\Debug\iChat.exe
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\bin\Debug\iChat.pdb
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\bin\Debug\EntityFramework.dll
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\bin\Debug\Guna.UI2.dll
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\bin\Debug\protoip.dll
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\bin\Debug\EntityFramework.xml
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\obj\Debug\iChat.csproj.AssemblyReference.cache
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\obj\Debug\iChat.LoginForm.resources
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\obj\Debug\iChat.Properties.Resources.resources
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\obj\Debug\iChat.views.ChatForm.resources
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\obj\Debug\iChat.csproj.GenerateResource.cache
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\obj\Debug\iChat.csproj.CoreCompileInputs.cache
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\obj\Debug\iChat.csproj.Up2Date
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\obj\Debug\iChat.exe
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\obj\Debug\iChat.pdb
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat\obj\Debug\iChat.Migrations.iChatContext.resources
+C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\iChat\obj\Debug\iChat.csproj.AssemblyReference.cache
+C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\iChat\obj\Debug\iChat.LoginForm.resources
+C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\iChat\obj\Debug\iChat.Properties.Resources.resources
+C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\iChat\obj\Debug\iChat.views.ChatForm.resources
+C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\iChat\obj\Debug\iChat.csproj.GenerateResource.cache
+C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\iChat\obj\Debug\iChat.csproj.CoreCompileInputs.cache
+C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\iChat\bin\Debug\iChat.exe.config
+C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\iChat\bin\Debug\iChat.exe
+C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\iChat\bin\Debug\iChat.pdb
+C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\iChat\bin\Debug\EntityFramework.dll
+C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\iChat\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\iChat\bin\Debug\Guna.UI2.dll
+C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\iChat\bin\Debug\protoip.dll
+C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\iChat\bin\Debug\EntityFramework.xml
+C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\iChat\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\iChat\obj\Debug\iChat.csproj.Up2Date
+C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\iChat\obj\Debug\iChat.exe
+C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\iChat\obj\Debug\iChat.pdb

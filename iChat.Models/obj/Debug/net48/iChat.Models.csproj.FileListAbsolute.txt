@@ -1,6 +1,0 @@
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat.Models\obj\Debug\net48\iChat.Models.csproj.AssemblyReference.cache
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat.Models\obj\Debug\net48\iChat.Models.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat.Models\obj\Debug\net48\iChat.Models.AssemblyInfoInputs.cache
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat.Models\obj\Debug\net48\iChat.Models.AssemblyInfo.cs
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat.Models\obj\Debug\net48\iChat.Models.csproj.CoreCompileInputs.cache
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\iChat.Models\obj\Debug\net48\iChat.Models.sourcelink.json

@@ -1,119 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\tiagl\\OneDrive\\Documentos\\Topicos Seguran\u00E7a\\TS---Projeto-2025 (4)\\TS---Projeto-2025\\iChat\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{5B71999B-DBE4-4EF7-A7AE-00AF003B1124}|iChat.csproj|c:\\users\\tiagl\\onedrive\\documentos\\topicos seguran\u00E7a\\ts---projeto-2025 (4)\\ts---projeto-2025\\ichat\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B71999B-DBE4-4EF7-A7AE-00AF003B1124}|iChat.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B71999B-DBE4-4EF7-A7AE-00AF003B1124}|iChat.csproj|C:\\Users\\tiagl\\OneDrive\\Documentos\\Topicos Seguran\u00E7a\\TS---Projeto-2025 (4)\\TS---Projeto-2025\\iChat\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5B71999B-DBE4-4EF7-A7AE-00AF003B1124}|iChat.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{93A549B1-D873-48BB-A28C-4A0ADAF15488}|..\\Servidor\\Servidor.csproj|c:\\users\\tiagl\\onedrive\\documentos\\topicos seguran\u00E7a\\ts---projeto-2025 (4)\\ts---projeto-2025\\servidor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B71999B-DBE4-4EF7-A7AE-00AF003B1124}|iChat.csproj|c:\\users\\tiagl\\onedrive\\documentos\\topicos seguran\u00E7a\\ts---projeto-2025 (4)\\ts---projeto-2025\\ichat\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B71999B-DBE4-4EF7-A7AE-00AF003B1124}|iChat.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B71999B-DBE4-4EF7-A7AE-00AF003B1124}|iChat.csproj|C:\\Users\\tiagl\\OneDrive\\Documentos\\Topicos Seguran\u00E7a\\TS---Projeto-2025 (4)\\TS---Projeto-2025\\iChat\\views\\chatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5B71999B-DBE4-4EF7-A7AE-00AF003B1124}|iChat.csproj|solutionrelative:views\\chatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B71999B-DBE4-4EF7-A7AE-00AF003B1124}|iChat.csproj|C:\\Users\\tiagl\\OneDrive\\Documentos\\Topicos Seguran\u00E7a\\TS---Projeto-2025 (4)\\TS---Projeto-2025\\iChat\\views\\chatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B71999B-DBE4-4EF7-A7AE-00AF003B1124}|iChat.csproj|solutionrelative:views\\chatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\tiago\\Documents\\Projetos\\TS - Projeto 2025\\v2\\TS---Projeto-2025\\iChat\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 2,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\tiagl\\OneDrive\\Documentos\\Topicos Seguran\u00E7a\\TS---Projeto-2025 (4)\\TS---Projeto-2025\\iChat\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\tiagl\\OneDrive\\Documentos\\Topicos Seguran\u00E7a\\TS---Projeto-2025 (4)\\TS---Projeto-2025\\iChat\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T18:05:15.462Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\tiagl\\OneDrive\\Documentos\\Topicos Seguran\u00E7a\\TS---Projeto-2025 (4)\\TS---Projeto-2025\\Servidor\\Program.cs",
-              "RelativeDocumentMoniker": "..\\Servidor\\Program.cs",
-              "ToolTip": "C:\\Users\\tiagl\\OneDrive\\Documentos\\Topicos Seguran\u00E7a\\TS---Projeto-2025 (4)\\TS---Projeto-2025\\Servidor\\Program.cs",
-              "RelativeToolTip": "..\\Servidor\\Program.cs",
-              "ViewState": "AQIAAFAAAAAAAAAAAAAzwIEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T15:46:17.343Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LoginForm.cs",
-              "DocumentMoniker": "C:\\Users\\tiagl\\OneDrive\\Documentos\\Topicos Seguran\u00E7a\\TS---Projeto-2025 (4)\\TS---Projeto-2025\\iChat\\LoginForm.cs",
-              "RelativeDocumentMoniker": "LoginForm.cs",
-              "ToolTip": "C:\\Users\\tiagl\\OneDrive\\Documentos\\Topicos Seguran\u00E7a\\TS---Projeto-2025 (4)\\TS---Projeto-2025\\iChat\\LoginForm.cs",
-              "RelativeToolTip": "LoginForm.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAWwMAAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T15:42:45.453Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ChatForm.cs",
-              "DocumentMoniker": "C:\\Users\\tiagl\\OneDrive\\Documentos\\Topicos Seguran\u00E7a\\TS---Projeto-2025 (4)\\TS---Projeto-2025\\iChat\\views\\ChatForm.cs",
-              "RelativeDocumentMoniker": "views\\ChatForm.cs",
-              "ToolTip": "C:\\Users\\tiagl\\OneDrive\\Documentos\\Topicos Seguran\u00E7a\\TS---Projeto-2025 (4)\\TS---Projeto-2025\\iChat\\views\\ChatForm.cs",
-              "RelativeToolTip": "views\\ChatForm.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T15:32:17.644Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ChatForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\tiagl\\OneDrive\\Documentos\\Topicos Seguran\u00E7a\\TS---Projeto-2025 (4)\\TS---Projeto-2025\\iChat\\views\\ChatForm.cs",
-              "RelativeDocumentMoniker": "views\\ChatForm.cs",
-              "ToolTip": "C:\\Users\\tiagl\\OneDrive\\Documentos\\Topicos Seguran\u00E7a\\TS---Projeto-2025 (4)\\TS---Projeto-2025\\iChat\\views\\ChatForm.cs [Design]",
-              "RelativeToolTip": "views\\ChatForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T15:32:15.005Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoginForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\tiagl\\OneDrive\\Documentos\\Topicos Seguran\u00E7a\\TS---Projeto-2025 (4)\\TS---Projeto-2025\\iChat\\LoginForm.cs",
-              "RelativeDocumentMoniker": "LoginForm.cs",
-              "ToolTip": "C:\\Users\\tiagl\\OneDrive\\Documentos\\Topicos Seguran\u00E7a\\TS---Projeto-2025 (4)\\TS---Projeto-2025\\iChat\\LoginForm.cs [Design]",
-              "RelativeToolTip": "LoginForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T15:07:36.322Z",
-              "EditorCaption": " [Design]"
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

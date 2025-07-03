@@ -1,29 +1,17 @@
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\Servidor\bin\Debug\Servidor.exe.config
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\Servidor\bin\Debug\Servidor.exe
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\Servidor\bin\Debug\Servidor.pdb
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\Servidor\bin\Debug\protoip.dll
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\Servidor\obj\Debug\Servidor.csproj.AssemblyReference.cache
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\Servidor\obj\Debug\Servidor.csproj.CoreCompileInputs.cache
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\Servidor\obj\Debug\Servidor.csproj.Up2Date
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\Servidor\obj\Debug\Servidor.exe
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\Servidor\obj\Debug\Servidor.pdb
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\Servidor\bin\Debug\EntityFramework.dll
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\Servidor\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\Servidor\bin\Debug\EntityFramework.xml
-C:\Users\tiagl\OneDrive\Ambiente de Trabalho\Topicos Segurança\TS---Projeto-2025\Servidor\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025\Servidor\obj\Debug\Servidor.csproj.AssemblyReference.cache
-C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025\Servidor\obj\Debug\Servidor.csproj.CoreCompileInputs.cache
-C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\Servidor\bin\Debug\Servidor.exe.config
-C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\Servidor\bin\Debug\Servidor.exe
-C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\Servidor\bin\Debug\Servidor.pdb
-C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\Servidor\bin\Debug\EntityFramework.dll
-C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\Servidor\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\Servidor\bin\Debug\protoip.dll
-C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\Servidor\bin\Debug\iChat.Models.pdb
-C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\Servidor\bin\Debug\EntityFramework.xml
-C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\Servidor\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\Servidor\obj\Debug\Servidor.csproj.AssemblyReference.cache
-C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\Servidor\obj\Debug\Servidor.csproj.CoreCompileInputs.cache
-C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\Servidor\obj\Debug\Servidor.csproj.Up2Date
-C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\Servidor\obj\Debug\Servidor.exe
-C:\Users\tiagl\OneDrive\Documentos\Topicos Segurança\TS---Projeto-2025 (4)\TS---Projeto-2025\Servidor\obj\Debug\Servidor.pdb
+C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v2\TS---Projeto-2025\Servidor\bin\Debug\Servidor.exe.config
+C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v2\TS---Projeto-2025\Servidor\bin\Debug\Servidor.exe
+C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v2\TS---Projeto-2025\Servidor\bin\Debug\Servidor.pdb
+C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v2\TS---Projeto-2025\Servidor\bin\Debug\EntityFramework.dll
+C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v2\TS---Projeto-2025\Servidor\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v2\TS---Projeto-2025\Servidor\bin\Debug\iChat.exe
+C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v2\TS---Projeto-2025\Servidor\bin\Debug\protoip.dll
+C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v2\TS---Projeto-2025\Servidor\bin\Debug\Guna.UI2.dll
+C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v2\TS---Projeto-2025\Servidor\bin\Debug\iChat.pdb
+C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v2\TS---Projeto-2025\Servidor\bin\Debug\iChat.exe.config
+C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v2\TS---Projeto-2025\Servidor\bin\Debug\EntityFramework.xml
+C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v2\TS---Projeto-2025\Servidor\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v2\TS---Projeto-2025\Servidor\obj\Debug\Servidor.csproj.AssemblyReference.cache
+C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v2\TS---Projeto-2025\Servidor\obj\Debug\Servidor.csproj.CoreCompileInputs.cache
+C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v2\TS---Projeto-2025\Servidor\obj\Debug\Servidor.csproj.Up2Date
+C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v2\TS---Projeto-2025\Servidor\obj\Debug\Servidor.exe
+C:\Users\tiago\Documents\Projetos\TS - Projeto 2025\v2\TS---Projeto-2025\Servidor\obj\Debug\Servidor.pdb

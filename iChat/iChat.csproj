@@ -74,6 +74,11 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202507021346550_iChatContext.cs" />
+    <Compile Include="Migrations\202507021346550_iChatContext.Designer.cs">
+      <DependentUpon>202507021346550_iChatContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="models\iChatContext.cs" />
     <Compile Include="models\Messager.cs" />
     <Compile Include="models\Status.cs" />
@@ -99,6 +104,9 @@
   <ItemGroup>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202507021346550_iChatContext.resx">
+      <DependentUpon>202507021346550_iChatContext.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -25,6 +25,8 @@ namespace iChat
             this.Load += LoginForm_Load;
         }
 
+
+        /* ---------- Função de inicialização ---------- */
         private void LoginForm_Load(object sender, EventArgs e)
         {
             // Decide se mostra login ou registo
@@ -42,6 +44,117 @@ namespace iChat
             }
         }
 
+
+        /* ---------- Formatação do texto ---------- */
+
+        /* ---------- Registo ---------- */
+        private void tb_RegisterUsername_Enter(object sender, EventArgs e)
+        {
+            if (tb_RegisterUsername.Text == "Username")
+            {
+                tb_RegisterUsername.Text = "";
+                tb_RegisterUsername.ForeColor = Color.Black;
+            }
+        }
+        private void tb_RegisterUsername_Leave(object sender, EventArgs e)
+        {
+            if (tb_RegisterUsername.Text == "")
+            {
+                tb_RegisterUsername.Text = "Username";
+                tb_RegisterUsername.ForeColor = Color.Silver;
+            }
+        }
+        private void tb_RegisterEmail_Enter(object sender, EventArgs e)
+        {
+            if (tb_RegisterEmail.Text == "Email")
+            {
+                tb_RegisterEmail.Text = "";
+                tb_RegisterEmail.ForeColor = Color.Black;
+            }
+        }
+        private void tb_RegisterEmail_Leave(object sender, EventArgs e)
+        {
+            if (tb_RegisterEmail.Text == "")
+            {
+                tb_RegisterEmail.Text = "Email";
+                tb_RegisterEmail.ForeColor = Color.Silver;
+            }
+        }
+        private void tb_RegisterPassword_Enter(object sender, EventArgs e)
+        {
+            if (tb_RegisterPassword.Text == "Password")
+            {
+                tb_RegisterPassword.Text = "";
+                tb_RegisterPassword.UseSystemPasswordChar = true;
+                tb_RegisterPassword.ForeColor = Color.Black;
+            }
+        }
+        private void tb_RegisterPassword_Leave(object sender, EventArgs e)
+        {
+            if (tb_RegisterPassword.Text == "")
+            {
+                tb_RegisterPassword.Text = "Password";
+                tb_RegisterPassword.UseSystemPasswordChar = false;
+                tb_RegisterPassword.ForeColor = Color.Silver;
+            }
+        }
+        private void tb_RegisterConfirmPassword_Leave(object sender, EventArgs e)
+        {
+            if (tb_RegisterConfirmPassword.Text == "")
+            {
+                tb_RegisterConfirmPassword.Text = "Confirm Password";
+                tb_RegisterConfirmPassword.UseSystemPasswordChar = false;
+                tb_RegisterConfirmPassword.ForeColor = Color.Silver;
+            }
+        }
+        private void tb_RegisterConfirmPassword_Enter(object sender, EventArgs e)
+        {
+            if (tb_RegisterConfirmPassword.Text == "Confirm Password")
+            {
+                tb_RegisterConfirmPassword.Text = "";
+                tb_RegisterConfirmPassword.UseSystemPasswordChar = true;
+                tb_RegisterConfirmPassword.ForeColor = Color.Black;
+            }
+        }
+
+        /* ---------- Login ---------- */
+        private void tb_Username_Enter(object sender, EventArgs e)
+        {
+            if (tb_Username.Text == "Username")
+            {
+                tb_Username.Text = "";            
+                tb_Username.ForeColor = Color.Black;     
+            }
+        }
+        private void tb_Username_Leave(object sender, EventArgs e)
+        {
+            if (tb_Username.Text == "")
+            {
+                tb_Username.Text = "Username";          
+                tb_Username.ForeColor = Color.Silver;    
+            }
+        }
+        private void tb_Password_Enter(object sender, EventArgs e)
+        {
+            if (tb_Password.Text == "Password")
+            {
+                tb_Password.Text = "";                     
+                tb_Password.UseSystemPasswordChar = true;  
+                tb_Password.ForeColor = Color.Black;      
+            }
+        }
+        private void tb_Password_Leave(object sender, EventArgs e)
+        {
+            if (tb_Password.Text == "")
+            {
+                tb_Password.Text = "Password";              
+                tb_Password.UseSystemPasswordChar = false; 
+                tb_Password.ForeColor = Color.Silver;    
+            }
+        }
+
+
+        /* ---------- Funções do Register/Login ---------- */
         private void b_Login_Click(object sender, EventArgs e)
         {
             string user = tb_Username.Text;
@@ -107,9 +220,6 @@ namespace iChat
                 MessageBox.Show("Erro no servidor: " + ex.Message);
             }
         }
-
-
-
         private void b_Register_Click(object sender, EventArgs e)
         {
             string u = tb_RegisterUsername.Text;
@@ -134,8 +244,6 @@ namespace iChat
             p_Login.Visible = true;
         }
 
-        // — Helpers de criptografia e de sessão —
-
         private static string EncryptString(string plain, AesCryptoServiceProvider aes)
         {
             if (aes == null || aes.Key == null)
@@ -147,7 +255,6 @@ namespace iChat
                            .TransformFinalBlock(Encoding.UTF8.GetBytes(plain), 0, plain.Length);
             return Convert.ToBase64String(iv) + "|" + Convert.ToBase64String(ct);
         }
-
         private static string DecryptString(string data, SymmetricAlgorithm aes)
         {
             if (string.IsNullOrWhiteSpace(data) || !data.Contains("|"))
@@ -163,8 +270,6 @@ namespace iChat
                                 .TransformFinalBlock(cipher, 0, cipher.Length);
             return Encoding.UTF8.GetString(plain);
         }
-
-
         private (string username, string password)? LoadCredentials()
         {
             if (File.Exists("username.dat") && File.Exists("password.dat"))
@@ -176,26 +281,22 @@ namespace iChat
             }
             return null;
         }
-
         private void SaveCredentials(string u, string p)
         {
             File.WriteAllText("username.dat", u);
             byte[] b = Encoding.UTF8.GetBytes(p);
             File.WriteAllBytes("password.dat", ProtectedData.Protect(b, null, DataProtectionScope.CurrentUser));
         }
-
         private void ClearSavedCredentials()
         {
             if (File.Exists("username.dat")) File.Delete("username.dat");
             if (File.Exists("password.dat")) File.Delete("password.dat");
         }
-
         private bool UsersExist()
         {
             using (var db = new iChatContext())
                 return db.Users.Any();
         }
-
         private static string HashSHA256(string input)
         {
             using (var sha = System.Security.Cryptography.SHA256.Create())
@@ -205,6 +306,18 @@ namespace iChat
                 foreach (byte b in h) sb.Append(b.ToString("x2"));
                 return sb.ToString();
             }
+        }
+
+        private void l_Login_Click(object sender, EventArgs e)
+        {
+            l_Login.Visible = true;
+            l_Register.Visible = false;
+        }
+
+        private void l_Register_Click(object sender, EventArgs e)
+        {
+            l_Register.Visible = true;
+            l_Login.Visible = false;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace iChat.Models
             : base("name=iChatContext")
         { }
 
-        public DbSet<User>? Users { get; set; }
-        public DbSet<Messager>? Messagers { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Messager> Messagers { get; set; }
     }
 }

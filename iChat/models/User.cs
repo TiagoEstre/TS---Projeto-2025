@@ -1,13 +1,13 @@
-﻿// iChat.Models/User.cs
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace iChat.Models
+public class User
 {
-    public class User
-    {
-        public int Id { get; set; }
-        public string Name { get; set; } = null!;
-        public string Email { get; set; } = null!;
-        public string Password { get; set; } = null!;
-        // any other fields…
-    }
+    [Key]
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Email { get; set; }
+    public string Password { get; set; }
+
+    // ✅ NOVO!
+    public string PublicKey { get; set; }
 }
